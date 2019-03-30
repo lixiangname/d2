@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			.watch{
+				width: 400px;
+				height:400px;
+				border: solid 1px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<canvas class="watch" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var watch=document.querySelector(".watch");
+			var vtx=watch.getContext('2d');
+			vtx.beginPath();
+			vtx.rotate(Math.PI/4)
+			vtx.fillRect(200,200,400,400)
+			vtx.lineWidth=5
+			vtx.strokeStyle="black"
+			vtx.stroke()
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

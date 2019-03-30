@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				width: 400px;
+				height: 400px;
+				border: solid 1px red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var canvas=document.getElementById('canvas');
+			var ctx=canvas.getContext('2d');
+			function drawstart(x,y,r,d){
+			ctx.translate(x,y)
+			ctx.lineWidth=5;
+			for(var i = 0; i < 5;i++){
+				var x1=2*r*Math.cos(Math.PI/180*(18+i*72))
+				var y1=-2*r*Math.sin(Math.PI/180*(18+i*72))
+				 
+				ctx.lineTo(x1,y1)
+				
+				var x2=r*Math.cos(Math.PI/180*(54+i*72))
+				var y2=-1*r*Math.sin(Math.PI/180*(54+i*72))
+				 ctx.lineTo(x2,y2)
+			}
+			ctx.closePath();
+			ctx.stroke();
+			ctx.fillStyle='red'
+			ctx.fill()
+			}
+			drawstart(200,200,100,0)
+		</script>
+	</body>
+</html>

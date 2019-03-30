@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			.watch{
+				width: 300px;
+				height: 300px;
+				border: solid 1px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<canvas class="watch" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var watch=document.querySelector(".watch");
+			var vtx=watch.getContext('2d');
+			
+			var r=300;
+			
+			
+			vtx.beginPath();
+			vtx.arc(400,400,r,0,Math.PI*2,false);
+			vtx.lineWidth=10
+			vtx.strokeStyle="antiquewhite"
+			vtx.stroke()
+			
+			for (j=0;j<60;j++) {
+				var point=2*Math.PI/60*j
+				var x=400+(r-10)*Math.cos(point)
+				var y=400+(r-10)*Math.sin(point)
+				
+				vtx.beginPath();
+				
+				vtx.arc(x,y,4,0,2*Math.PI,false);
+				
+				if(j%5==0){
+					vtx.arc(x,y,8,0,2*Math.PI,false);
+					vtx.fillStyle="cadetblue"
+				}else{
+					vtx.fillStyle="gray"
+				}
+				
+				vtx.fill()
+				
+				
+			}
+			
+			
+			vtx.closePath()
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>
